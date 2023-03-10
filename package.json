@@ -2,26 +2,35 @@
   "name": "demo",
   "version": "1.0.0",
   "description": "Vorlage",
-  "main": "index.js",
+  "main": "index.ts",
   "scripts": {
-    "start": "node index.js",
+    "start": "ts-node-esm index.ts",
     "test": "mocha tests/*.test.js"
   },
   "type": "module",
   "author": "mgfeller",
   "license": "ISC",
   "dependencies": {
-    "body-parser": "^1.19.0",
-    "chai": "^4.3.4",
-    "chai-dom": "^1.9.0",
+    "body-parser": "^1.20.2",
+    "chai": "^4.3.7",
+    "chai-dom": "^1.11.0",
     "chai-http": "^4.3.0",
-    "dotenv": "^10.0.0",
-    "express": "^4.17.1",
-    "express-handlebars": "^5.3.3",
-    "express-session": "^1.17.2",
-    "jsdom": "^17.0.0",
-    "mocha": "^9.0.3",
-    "nedb-promises": "^5.0.0",
-    "sinon": "^11.1.2"
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "express-handlebars": "^7.0.2",
+    "express-session": "^1.17.3",
+    "jsdom": "^21.1.0",
+    "mocha": "^10.2.0",
+    "nedb-promises": "^6.2.1",
+    "sinon": "^15.0.1",
+    "ts-node": "^10.9.1",
+    "typescript": "^4.9.5"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.17",
+    "@types/express-session": "^1.17.6",
+    "@types/node": "^18.15.0",
+    "@typescript-eslint/eslint-plugin": "^5.54.1",
+    "@typescript-eslint/parser": "^5.54.1"
   }
 }

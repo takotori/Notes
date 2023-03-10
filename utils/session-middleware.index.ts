@@ -1,4 +1,4 @@
-export const sessionUserSettings = (req, res, next) => {
+export const sessionUserSettings = (req: any, res: any, next: any) => {
     const userSettings = req.session?.userSettings || {orderBy: 'title', orderDirection: -1};
     const {orderBy, orderDirection} = req.query;
 
@@ -11,3 +11,7 @@ export const sessionUserSettings = (req, res, next) => {
     req.userSettings = req.session.userSettings = userSettings;
     next();
 };
+
+export class Settings {
+    // todo: kinda empty settings
+}
