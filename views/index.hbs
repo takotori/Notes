@@ -1,1 +1,22 @@
-{{data}}
+<div id="container">
+    <div id="setup">
+        <button>al</button>
+        <button>ar</button>
+    </div>
+
+    <div id="filter">
+        <button>Name</button>
+        <button>By Due Date</button>
+        <button>By Creation DAte</button>
+        <button>By Importance</button>
+        <button>Filter Completed</button>
+    </div>
+
+    <div id="notes">
+        {{#each notes}}
+            <div class="note-item">
+                {{name}}
+            </div>
+        {{/each}}
+    </div>
+</div>
