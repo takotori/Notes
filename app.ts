@@ -5,7 +5,7 @@ import session from 'express-session';
 import {indexRoutes} from './routes/index-routes';
 import {helpers} from './utils/handlebar-util'
 
-import exphbs from 'express-handlebars';
+import {create} from 'express-handlebars';
 import {sessionUserSettings, Settings} from "./utils/session-middleware.index";
 
 declare module 'express-session' {
@@ -23,7 +23,7 @@ declare global {
 }
 
 export const app = express();
-const hbs = exphbs.create({
+const hbs = create({
     extname: '.hbs',
     defaultLayout: "default",
     helpers: {
