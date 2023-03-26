@@ -16,17 +16,18 @@
         {{#each notes}}
             <div class="note-item">
                 <div class="item1">
-                    <p>in a day</p>
-                    <label for="finished">Status</label>
-                    <input type="checkbox" id="finished" name="finished">
+                    <p class="note-duedate">in a day</p>
+                    <label for="finished">
+                        <input class="note-status" type="checkbox" name="finished">
+                    </label>
                 </div>
                 <div class="item2">
-                    <p>Title</p>
-                    <p>Description</p>
+                    <p class="note-title">Title</p>
+                    <p class="note-description">Description</p>
                 </div>
                 <div class="item3">
-                    <p>Very important</p>
-                    <button id="editBtn" class="button" type="submit">Edit</button>
+                    <p class="note-importance">Very important</p>
+                    <button class="note-button note-editBtn" type="submit">Edit</button>
                 </div>
             </div>
         {{else}}
