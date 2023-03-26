@@ -1,7 +1,7 @@
 <div id="container">
     <div id="setup">
-        <button>al</button>
-        <button>ar</button>
+        <button>Create new todo</button>
+        <button>Toggle Style</button>
     </div>
 
     <div id="filter">
@@ -15,8 +15,22 @@
     <div id="notes">
         {{#each notes}}
             <div class="note-item">
-                {{name}}
+                <div class="item1">
+                    <p>in a day</p>
+                    <label for="finished">Status</label>
+                    <input type="checkbox" id="finished" name="finished">
+                </div>
+                <div class="item2">
+                    <p>Title</p>
+                    <p>Description</p>
+                </div>
+                <div class="item3">
+                    <p>Very important</p>
+                    <button id="editBtn" class="button" type="submit">Edit</button>
+                </div>
             </div>
+        {{else}}
+            <div>unlucky</div>
         {{/each}}
     </div>
 </div>

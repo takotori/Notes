@@ -12,3 +12,26 @@
 #filter {
     justify-content: space-between;
 }
+
+#notes {
+    display: flex;
+    flex-direction: column;
+}
+
+.note-item {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+}
+
+.item1 {
+    flex-grow: 2
+}
+
+.item2 {
+    flex-grow: 5
+}
+
+.item3 {
+    flex-grow: 2
+}
