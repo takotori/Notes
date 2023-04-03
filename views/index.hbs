@@ -18,17 +18,17 @@
         {{#each notes}}
             <div class="note-item">
                 <div class="item1">
-                    <p class="note-duedate">in a day</p>
+                    <p class="note-duedate">{{duedate}}</p>
                     <label for="finished">
-                        <input class="note-status" type="checkbox" name="finished">
+                        <input class="note-status" type="checkbox" name="finished" {{#if finished}} checked {{/if}}>
                     </label>
                 </div>
                 <div class="item2">
-                    <p class="note-title">Title</p>
-                    <p class="note-description">Description</p>
+                    <p class="note-title">{{title}}</p>
+                    <p class="note-description">{{description}}</p>
                 </div>
                 <div class="item3">
-                    <p class="note-importance">Very important</p>
+                    <p class="note-importance">{{importance}}</p>
                     <button class="note-button note-editBtn" type="submit">Edit</button>
                 </div>
             </div>

@@ -1,10 +1,13 @@
 import {Request, Response} from "express";
+import {todoStore} from "../services/todo-store";
 
 export class IndexController {
     index(req: Request, res: Response) {
-        res.render("index", {
-            dark: true,
-            notes: [{name: "asdf"}, {name: "asdf2"}, {name: "asdf3"}],
+        todoStore.all().then(a => {
+            res.render("index", {
+                dark: true,
+                notes: a,
+            });
         });
     }
 
