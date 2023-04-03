@@ -1,7 +1,13 @@
+body {
+    display: flex;
+    justify-content: center;
+}
+
 #container {
     display: flex;
     flex-direction: column;
     text-align: center;
+    min-width: 750px;
 }
 
 #setup {
