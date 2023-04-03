@@ -3,6 +3,7 @@ import bodyParser from 'body-parser';
 import path from 'path';
 import session from 'express-session';
 import {indexRoutes} from './routes/index-routes';
+import {todoRoutes} from './routes/todo-route';
 import {helpers} from './utils/handlebar-util'
 
 import {create} from 'express-handlebars';
@@ -44,3 +45,4 @@ app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
 
 app.use("/", indexRoutes);
+app.use("/todo", todoRoutes);

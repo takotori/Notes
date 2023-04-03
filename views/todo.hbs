@@ -1,0 +1,20 @@
+<form id="todoForm" method="post">
+    <label for="title">Title: </label>
+    <input type="text" id="title" name="title" required>
+
+    <label for="importance">Importance: </label>
+    <input type="number" min="0" max="5" id="importance" name="importance">
+
+    <label for="duedate">Due Date: </label>
+    <input type="date" id="duedate" name="duedate">
+
+    <label for="finished">Finished: </label>
+    <input type="checkbox" id="finished" name="finished">
+
+    <label for="description">Description: </label>
+    <textarea id="description" name="description"></textarea>
+
+    <button>Create</button>
+    <button>Create & Overview</button>
+    <button>Overview</button>
+</form>

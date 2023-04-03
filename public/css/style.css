@@ -3,7 +3,7 @@ body {
     justify-content: center;
 }
 
-#container {
+#container, #todoForm {
     display: flex;
     flex-direction: column;
     text-align: center;
