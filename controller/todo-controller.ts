@@ -7,8 +7,31 @@ export class TodoController {
     }
 
     save(req: Request, res: Response) {
-        const todoItem = todoStore.insert(req.body.title,  req.body.importance, req.body.duedate, req.body.finished, req.body.description);
-        res.redirect("/");
+        todoStore.insert(req.body.title, req.body.importance, req.body.dueDate, req.body.finished, req.body.description).then(todo => {
+            if (req.path.includes("/return")) {
+                res.redirect("/");
+            } else {
+                res.render("todo", {data: todo});
+            }
+        });
+    }
+
+    edit(req: Request, res: Response) {
+        todoStore.get(req.params.id).then(todo => {
+            res.render("todo", {data: todo});
+        });
+    }
+
+    update(req: Request, res: Response) {
+        todoStore.update(req.params.id, req.body.title, req.body.importance, req.body.dueDate, req.body.finished, req.body.description).then(() => {
+            if (req.path.includes("/return")) {
+                res.redirect("/");
+            } else {
+                todoStore.get(req.params.id).then(todo => {
+                    res.render("todo", {data: todo});
+                })
+            }
+        })
     }
 }
 

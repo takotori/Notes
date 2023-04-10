@@ -18,7 +18,7 @@
         {{#each notes}}
             <div class="note-item">
                 <div class="item1">
-                    <p class="note-duedate">{{duedate}}</p>
+                    <p class="note-duedate">{{dueDate}}</p>
                     <label for="finished">
                         <input class="note-status" type="checkbox" name="finished" {{#if finished}} checked {{/if}}>
                     </label>
@@ -29,7 +29,9 @@
                 </div>
                 <div class="item3">
                     <p class="note-importance">{{importance}}</p>
-                    <button class="note-button note-editBtn" type="submit">Edit</button>
+                    <form action="/todo/{{_id}}" method="get">
+                        <button class="note-button note-editBtn" type="submit">Edit</button>
+                    </form>
                 </div>
             </div>
         {{else}}

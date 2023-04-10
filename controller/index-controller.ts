@@ -3,10 +3,10 @@ import {todoStore} from "../services/todo-store";
 
 export class IndexController {
     index(req: Request, res: Response) {
-        todoStore.all().then(a => {
+        todoStore.all().then(todos => {
             res.render("index", {
                 dark: true,
-                notes: a,
+                notes: todos,
             });
         });
     }
