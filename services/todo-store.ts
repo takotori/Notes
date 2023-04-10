@@ -23,7 +23,10 @@ class TodoStore {
         return db.insert(new Todo(title, importance, dueDate, finished, description));
     }
 
-    all() {
+    all(removeCompleted?: boolean) {
+        if (removeCompleted) {
+            return db.find({finished: {$exists: false}});
+        }
         return db.find({});
     }
 

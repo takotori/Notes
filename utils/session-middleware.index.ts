@@ -1,5 +1,11 @@
 export const sessionSettings = (req: any, res: any, next: any) => {
-    const settings = req.session?.settings || {orderBy: 'title', orderDirection: -1, theme: true};
+    const settings = req.session?.settings || {
+        orderBy: 'title',
+        orderDirection: -1,
+        filterCompleted: false,
+        theme: true
+    };
+
     const {orderBy, orderDirection} = req.query;
 
     if (orderBy) {
@@ -15,5 +21,6 @@ export const sessionSettings = (req: any, res: any, next: any) => {
 export interface Settings {
     orderBy: string
     orderDirection: boolean
+    filterCompleted: boolean
     theme: boolean
 }

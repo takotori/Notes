@@ -6,5 +6,6 @@ const router = express.Router();
 router.get("/", indexController.index);
 router.post("/toggleTheme", indexController.toggleTheme)
 router.post("/orderBy", indexController.orderBy)
+router.post("/filterCompleted", indexController.filterCompleted)
 
 export const indexRoutes = router;
