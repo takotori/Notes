@@ -7,7 +7,7 @@ import {todoRoutes} from './routes/todo-route';
 import {helpers} from './utils/handlebar-util'
 
 import {create} from 'express-handlebars';
-import {sessionUserSettings, Settings} from "./utils/session-middleware.index";
+import {sessionSettings, Settings} from "./utils/session-middleware.index";
 
 declare module 'express-session' {
     interface SessionData {
@@ -40,7 +40,7 @@ app.set('views', path.resolve('views'));
 app.use(express.static(path.resolve('public')));
 app.use(session({secret: 'casduichasidbnuwezrfinasdcvjkadfhsuilfuzihfioda', resave: false, saveUninitialized: true}));
 
-app.use(sessionUserSettings)
+app.use(sessionSettings)
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
 

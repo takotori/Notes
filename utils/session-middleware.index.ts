@@ -1,17 +1,17 @@
-export const sessionUserSettings = (req: any, res: any, next: any) => {
-    const userSettings = req.session?.userSettings || {orderBy: 'title', orderDirection: -1};
+export const sessionSettings = (req: any, res: any, next: any) => {
+    const settings = req.session?.settings || {orderBy: 'title', orderDirection: -1, theme: true};
     const {orderBy, orderDirection} = req.query;
 
     if (orderBy) {
-        userSettings.orderBy = orderBy;
+        settings.orderBy = orderBy;
     }
     if (orderDirection) {
-        userSettings.orderDirection = orderDirection;
+        settings.orderDirection = orderDirection;
     }
-    req.userSettings = req.session.userSettings = userSettings;
+    req.settings = req.session.settings = settings;
     next();
 };
 
-export class Settings {
-    // todo: kinda empty settings
+export interface Settings {
+    theme: boolean
 }

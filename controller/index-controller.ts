@@ -5,17 +5,15 @@ export class IndexController {
     index(req: Request, res: Response) {
         todoStore.all().then(todos => {
             res.render("index", {
-                dark: true,
+                dark: req.settings.theme,
                 notes: todos,
             });
         });
     }
 
-    async getNotes(req: Request, res: Response) {
-        res.type("text/html");
-        res.write("<html>");
-        res.write("<p>no notes, git gud</p>");
-        res.end("</html>");
+    toggleTheme(req: Request, res: Response) {
+        req.settings.theme = !req.settings.theme;
+        res.redirect("/");
     }
 }
 

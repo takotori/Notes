@@ -3,7 +3,7 @@ import {todoStore} from "../services/todo-store";
 
 export class TodoController {
     index(req: Request, res: Response) {
-        res.render("todo");
+        res.render("todo", { dark: req.settings.theme});
     }
 
     save(req: Request, res: Response) {
