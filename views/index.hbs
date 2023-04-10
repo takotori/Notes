@@ -9,11 +9,17 @@
     </div>
 
     <div id="filter">
-        <button>Name</button>
-        <button>By Due Date</button>
-        <button>By Creation DAte</button>
-        <button>By Importance</button>
-        <button>Filter Completed</button>
+        <form action='/orderBy'>
+            <button type="submit" name="order" value="title" formmethod="post">Name</button>
+            <button type="submit" name="order" value="dueDate" formmethod="post">By Due Date</button>
+            <button type="submit" name="order" value="createDate" formmethod="post">By Creation Date</button>
+            <button type="submit" name="order" value="importance" formmethod="post">By Importance</button>
+        </form>
+
+        <form action="/filterCompleted">
+            <!--todo-->
+            <button type="submit" name="order" value="filterCompleted" formmethod="post">Filter Completed</button>
+        </form>
     </div>
 
     <div id="notes">

@@ -13,5 +13,7 @@ export const sessionSettings = (req: any, res: any, next: any) => {
 };
 
 export interface Settings {
+    orderBy: string
+    orderDirection: boolean
     theme: boolean
 }
