@@ -28,16 +28,22 @@ body {
     display: flex;
     justify-content: center;
     flex-direction: row;
+    border-bottom: 1px solid #9699a3;
+    padding-bottom: 15px;
 }
 
 .item1 {
-    flex-grow: 2
+    flex-grow: 2;
+    align-self: flex-end;
+    max-width: 200px;
 }
 
 .item2 {
-    flex-grow: 5
+    flex-grow: 5;
+    max-width: 350px;
 }
 
 .item3 {
-    flex-grow: 2
+    flex-grow: 2;
+    max-width: 200px;
 }
