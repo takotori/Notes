@@ -25,7 +25,7 @@
         {{#each notes}}
             <div class="note-item">
                 <div class="item1">
-                    <p class="note-duedate">{{dueDate}}</p>
+                    <p class="note-duedate">{{#if dueDate}}{{dueDate}}{{else}}Someday{{/if}}</p>
                     <label for="finished">
                         <input class="note-status" type="checkbox" name="finished" {{#if finished}} checked {{/if}}>
                     </label>
