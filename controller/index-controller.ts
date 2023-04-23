@@ -6,15 +6,12 @@ import {todoStore} from "../services/todo-store";
 // todo add arrow to show how it is ordered
 
 export class IndexController {
-    index(req: Request, res: Response) {
-        todoStore.all(req.settings.filterCompleted)
-            .sort({[req.settings.orderBy]: req.settings.orderDirection ? 1 : -1})
-            .then(todos => {
-                res.render("index", {
-                    dark: req.settings.theme,
-                    notes: todos,
-                });
-            });
+    async index(req: Request, res: Response) {
+        const todos = await todoStore.all(req.settings.orderBy, req.settings.orderDirection, req.settings.filterCompleted);
+        res.render("index", {
+            dark: req.settings.theme,
+            notes: todos,
+        });
     }
 
     toggleTheme(req: Request, res: Response) {
