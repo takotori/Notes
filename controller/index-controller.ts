@@ -1,7 +1,6 @@
 import {Request, Response} from "express";
 import {todoStore} from "../services/todo-store";
 
-// todo theme changes when going from index to todo
 // todo Buttons maybe bigger on mobile
 // todo add arrow to show how it is ordered
 

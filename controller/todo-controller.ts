@@ -17,7 +17,7 @@ export class TodoController {
 
     async edit(req: Request, res: Response) {
         const todo = await todoStore.get(req.params.id);
-        res.render("todo", {data: todo});
+        res.render("todo", {data: todo, dark: req.settings.theme});
     }
 
     async update(req: Request, res: Response) {
