@@ -11,7 +11,7 @@ export class TodoController {
         if (req.path.includes("/return")) {
             res.redirect("/");
         } else {
-            res.render("todo", {data: todo});
+            res.render("todo", {data: todo, dark: req.settings.theme});
         }
     }
 
