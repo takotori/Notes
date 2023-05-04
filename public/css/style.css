@@ -3,6 +3,10 @@ body {
     justify-content: center;
 }
 
+#no-Notes {
+    width: 250px;
+}
+
 #container, #todoForm {
     display: flex;
     flex-direction: column;
