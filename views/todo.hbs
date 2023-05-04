@@ -1,26 +1,37 @@
 <form id="todoForm" method="post">
-    <label for="title">Title: </label>
-    <input type="text" id="title" name="title" value="{{data.title}}" required>
+    <div class="formRow">
+        <label for="title">Title: </label>
+        <input type="text" id="title" name="title" value="{{data.title}}" required>
+    </div>
 
-    <label for="importance">Importance: </label>
-    <input type="number" min="0" max="5" id="importance" name="importance" value="{{data.importance}}">
+    <div class="formRow">
+        <label for="importance">Importance: </label>
+        <input type="number" min="0" max="5" id="importance" name="importance" value="{{data.importance}}">
+    </div>
+    <div class="formRow">
+        <label for="dueDate">Due Date: </label>
+        <input type="date" id="dueDate" name="dueDate" value="{{data.dueDate}}">
+    </div>
 
-    <label for="dueDate">Due Date: </label>
-    <input type="date" id="dueDate" name="dueDate" value="{{data.dueDate}}">
+    <div class="formRow">
+        <label for="finished">Finished: </label>
+        <input type="checkbox" id="finished" name="finished" {{#if data.finished}} checked {{/if}}>
+    </div>
 
-    <label for="finished">Finished: </label>
-    <input type="checkbox" id="finished" name="finished" {{#if data.finished}} checked {{/if}}>
+    <div class="formRow">
+        <label for="description">Description: </label>
+        <textarea id="description" name="description">{{data.description}}</textarea>
+    </div>
 
-    <label for="description">Description: </label>
-    <textarea id="description" name="description">{{data.description}}</textarea>
+    <div id="todoButtons">
+        <button id="finish" type="submit" formaction="/todo{{#if data._id}}/{{data._id}}{{/if}}">
+            {{#if data._id}}Update{{else}}Create{{/if}}
+        </button>
 
-    <button id="finish" type="submit" formaction="/todo{{#if data._id}}/{{data._id}}{{/if}}">
-        {{#if data._id}}Update{{else}}Create{{/if}}
-    </button>
+        <button id="finishReturn" type="submit" formaction="/todo{{#if data._id}}/{{data._id}}{{/if}}/return">
+            {{#if data._id}}Update{{else}}Create{{/if}} & Overview
+        </button>
 
-    <button id="finishReturn" type="submit" formaction="/todo{{#if data._id}}/{{data._id}}{{/if}}/return">
-        {{#if data._id}}Update{{else}}Create{{/if}} & Overview
-    </button>
-
-    <button id="return" type="submit" formaction="/" formmethod="get">Overview</button>
+        <button id="return" type="submit" formaction="/" formmethod="get">Overview</button>
+    </div>
 </form>

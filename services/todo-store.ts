@@ -15,31 +15,30 @@ class Todo {
 
 class TodoStore {
 
-    insert(title: string,
-           importance: number,
-           dueDate: Date,
-           finished: boolean,
-           description: string) {
+    async insert(title: string,
+                 importance: number,
+                 dueDate: Date,
+                 finished: boolean,
+                 description: string) {
         return db.insert(new Todo(title, importance, dueDate, finished, description));
     }
 
-    all(removeCompleted?: boolean) {
-        if (removeCompleted) {
-            return db.find({finished: {$exists: false}});
-        }
-        return db.find({});
+    async all(orderBy: string, orderDirection: boolean, removeCompleted: boolean) {
+        const query = removeCompleted ? {finished: {$exists: false}} : {};
+        return db.find(query)
+            .sort({[orderBy]: orderDirection ? 1 : -1});
     }
 
-    get(id: string) {
+    async get(id: string) {
         return db.findOne({_id: id});
     }
 
-    update(id: string,
-           title: string,
-           importance: number,
-           dueDate: Date,
-           finished: boolean,
-           description: string) {
+    async update(id: string,
+                 title: string,
+                 importance: number,
+                 dueDate: Date,
+                 finished: boolean,
+                 description: string) {
         return db.update({_id: id}, {
             $set: {
                 title: title,

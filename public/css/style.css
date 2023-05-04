@@ -11,7 +11,7 @@ body {
     display: flex;
     flex-direction: column;
     text-align: center;
-    min-width: 750px;
+    width: 100%;
 }
 
 #setup {
@@ -21,6 +21,9 @@ body {
 
 #filter {
     justify-content: space-between;
+    display: flex;
+    flex-direction: row;
+    padding: 5px 0 5px 0;
 }
 
 #notes {
@@ -38,16 +41,62 @@ body {
 
 .item1 {
     flex-grow: 2;
-    align-self: flex-end;
-    max-width: 200px;
+    max-width: 26%;
 }
 
 .item2 {
     flex-grow: 5;
-    max-width: 350px;
+    max-width: 48%;
 }
 
 .item3 {
     flex-grow: 2;
-    max-width: 200px;
+    max-width: 26%;
+}
+
+.formRow {
+    display: flex;
+    justify-content: flex-end;
+    padding: .5em;
+}
+
+.formRow > label {
+    padding: .25em 0.5em .25em 0;
+    flex: 1;
+}
+
+.formRow > input, textarea {
+    flex: 3;
+}
+
+#todoButtons {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#todoForm {
+    display: flex;
+}
+
+@media screen and (min-width: 30em) {
+    #container, #todoForm {
+        max-width: 30em;
+    }
+}
+
+@media screen and (min-width: 48em) {
+    #container, #todoForm {
+        max-width: 48em;
+    }
+}
+
+@media screen and (min-width: 62em) {
+    #container, #todoForm {
+        max-width: 62em;
+    }
+
+    #todoButtons {
+        flex-direction: row;
+    }
 }
