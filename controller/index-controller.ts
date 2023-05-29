@@ -1,9 +1,6 @@
 import {Request, Response} from "express";
 import {todoStore} from "../services/todo-store";
 
-// todo Buttons maybe bigger on mobile
-// todo add arrow to show how it is ordered
-
 export class IndexController {
     async index(req: Request, res: Response) {
         const todos = await todoStore.all(req.settings.orderBy, req.settings.orderDirection, req.settings.filterCompleted);
